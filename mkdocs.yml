@@ -1,6 +1,6 @@
 site_name: AKS Capture the Flag
-repo_name: 'lastcoolnameleft/aks-ctf'
-repo_url: 'https://github.com/lastcoolnameleft/aks-ctf'
+repo_name: 'azure/aks-ctf'
+repo_url: 'https://github.com/azure/aks-ctf'
 dev_addr: 0.0.0.0:8080
 
 theme:
@@ -58,4 +58,4 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/lastcoolnameleft/aks-ctf
+      link: https://github.com/azure/aks-ctf
