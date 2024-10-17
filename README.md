@@ -1,14 +1,20 @@
-# Project
+# AKS Capture the Flag
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+## Viewing this Guide
 
-As the maintainer of this project, please make a few updates:
+Visit [https://azure.github.io/aks-ctf/](https://azure.github.io/aks-ctf/)
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## KubeCon Schedule Link
+
+[Attacking and Defending Kubernetes Clusters: A Guided Tour](https://sched.co/Uaew)
+
+## About the Author(s)
+
+* [@lastcoolnameleft](https://lastcoolnameleft.com) is a Partner Solution Architect at Microsoft and has supported the Azure partner ecosystem enable and secure their Docker and Kubernetes deployments since joining Microsoft in 2007.
+* [@erleonard](https://www.linkedin.com/in/erleonard/) is a Partner Solution Architect at Microsoft focusing on Cloud-Native technologies.
+* [@markjgardner](https://markjgardner.com) is a Principal Technical Specialist at Microsoft helping customers to adapt and modernize their business as they move to the cloud. When not working on containerizing all the things, Mark and his wife own and operate a 160 acre horse farm in Kentucky.
+
+This workshop was inspired by https://github.com/securekubernetes/securekubernetes/ and the content created by [those authors](https://github.com/securekubernetes/securekubernetes/?tab=readme-ov-file#about-the-authors).
 
 ## Contributing
 
