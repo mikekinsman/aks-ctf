@@ -4,10 +4,6 @@
 
 Visit [https://azure.github.io/aks-ctf/](https://azure.github.io/aks-ctf/)
 
-## KubeCon Schedule Link
-
-[Attacking and Defending Kubernetes Clusters: A Guided Tour](https://sched.co/Uaew)
-
 ## About the Author(s)
 
 * [@lastcoolnameleft](https://lastcoolnameleft.com) is a Partner Solution Architect at Microsoft and has supported the Azure partner ecosystem enable and secure their Docker and Kubernetes deployments since joining Microsoft in 2007.
