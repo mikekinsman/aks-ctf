@@ -7,7 +7,7 @@ Visit [https://azure.github.io/aks-ctf/](https://azure.github.io/aks-ctf/)
 ## About the Author(s)
 
 * [@lastcoolnameleft](https://lastcoolnameleft.com) is a Partner Solution Architect at Microsoft and has supported the Azure partner ecosystem enable and secure their Docker and Kubernetes deployments since joining Microsoft in 2007.
-* [@erleonard](https://www.linkedin.com/in/erleonard/) is a Partner Solution Architect at Microsoft focusing on Cloud-Native technologies.
+* [@erleonard](https://www.linkedin.com/in/erleonard/) is a Partner Solution Architect at Microsoft focusing on Cloud-Native technologies. 
 * [@markjgardner](https://markjgardner.com) is a Principal Technical Specialist at Microsoft helping customers to adapt and modernize their business as they move to the cloud. When not working on containerizing all the things, Mark and his wife own and operate a 160 acre horse farm in Kentucky.
 
 This workshop was inspired by https://github.com/securekubernetes/securekubernetes/ and the content created by [those authors](https://github.com/securekubernetes/securekubernetes/?tab=readme-ov-file#about-the-authors).
