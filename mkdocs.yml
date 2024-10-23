@@ -10,6 +10,7 @@ theme:
     accent: 'red'
   icon:
     logo: material/cloud
+  custom_dir: overrides
 plugins:
   - search:
       separator: '[\s\-\.]+'
