@@ -108,7 +108,7 @@ az deployment group create \
                subnetPrefix=10.224.0.0/16 \
                aksClusterName=${AKS_NAME} \
                acrName=${ACR_NAME} \
-               aksNodeCount=1 \
+               aksNodeCount=2 \
                aksNodeSize=Standard_DS2_v2 \
                userIP=${USER_PUBLIC_IP} \
                sshPublicKey="$(cat ./aks-ssh.pub)"
