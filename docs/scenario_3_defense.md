@@ -27,7 +27,8 @@ Let's delete the pod: `kubectl delete pod --force --grace-period=0 $POD`.
 But just to be sure, let's verify that process is gone.
 
 ```
-kubectl exec -it $NEW_POD -- ps -ef
+POD=$(kgpo -l=app=insecure-app -o json | jq '.items[0].metadata.name' -r)
+kubectl exec -it $POD -- ps -ef
 ```
 
 This...is not good.  The miner is running inside the app and restarting the app also restarted the miner.  Is our app infected?!  How could this have happened?!
@@ -58,6 +59,7 @@ Looking at the source code, it appears there's an `/admin` page which Frank adde
 And the attackers were able to use this really permissive Service Account role binding to get escalated privledges to the cluster.
 
 We need a plan of defense:
+
 * Delete the infected image
 * Stop using container registry admin credentials
 * Enable Defender for Containers 
