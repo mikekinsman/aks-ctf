@@ -174,6 +174,3 @@ kubectl get svc metrics-server-service -n kube-system -o table -o jsonpath='{.st
 
 Our Bitcoin miner is now deployed and we've also deployed an SSH backdoor.  Mission Accomplished.
 
-## Completion
-
-You've completed Scenario 1 Attack.  Now let's go to [Scenario 1 Defense](scenario_1_defense/).
