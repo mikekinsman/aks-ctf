@@ -6,22 +6,6 @@ Welcome to the Attacking and Defending Azure Kubernetes Service Clusters.  This 
 
 Click on [Getting Started](azure/) in the table of contents and follow the directions.
 
-When a `kubectl get pods --all-namespaces` gives output like the following, you're ready to begin the tutorial.
-
-```
-$ kubectl get pods --all-namespaces
-NAMESPACE     NAME                                         READY   STATUS    RESTARTS   AGE
-dev           app-6ffb94966d-9nqnk                         1/1     Running   0          70s
-dev           dashboard-5889b89d4-dj7kq                    2/2     Running   0          70s
-dev           db-649646fdfc-kzp6g                          1/1     Running   0          70s
-...
-prd           app-6ffb94966d-nfhn7                         1/1     Running   0          70s
-prd           dashboard-7b5fbbc459-sm2zk                   2/2     Running   0          70s
-prd           db-649646fdfc-vdwj6                          1/1     Running   0          70s
-
-```
-
-
 ## About the Creators
 
 * [@lastcoolnameleft](https://lastcoolnameleft.com) is a Partner Solution Architect at Microsoft and has supported the Azure partner ecosystem enable and secure their Docker and Kubernetes deployments since joining Microsoft in 2007.

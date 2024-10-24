@@ -23,7 +23,7 @@ kubectl get pods --namespace dev
 The output should look similar to this:
 ```
 NAME                           READY   STATUS    RESTARTS   AGE
-insecure-app-674cf64dd-qf7md   1/1     Running   0          63m                                                                                                                        [0.3s]
+insecure-app-674cf64dd-qf7md   1/1     Running   0          63m
 ```
 
 If it looks good, move on to Scenario 1 Attack.
