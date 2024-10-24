@@ -65,7 +65,7 @@ spec:
         - name: acr-secret  
       containers:
       - name: insecure-app
-        image: lastcoolnameleft/insecure-app:latest
+        image: aks-ctf/insecure-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

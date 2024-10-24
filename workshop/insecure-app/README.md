@@ -9,12 +9,12 @@ Run example:
 cd workshop/insecure-app
 
 # Build and push for Linux
-docker build --platform linux/amd64  -t lastcoolnameleft/insecure-app:latest .
-docker push lastcoolnameleft/insecure-app:latest
+docker build --platform linux/amd64  -t aks-ctf/insecure-app:latest .
+docker push aks-ctf/insecure-app:latest
 
 # Build and run for Mac (only for local testing)
-docker build --platform linux/arm64  -t lastcoolnameleft/insecure-app:latest .
-docker run -p 8080:8080 -e AUTH_USERNAME=foo -e AUTH_PASSWORD=bar lastcoolnameleft/insecure-app:latest
+docker build --platform linux/arm64  -t aks-ctf/insecure-app:latest .
+docker run -p 8080:8080 -e AUTH_USERNAME=foo -e AUTH_PASSWORD=bar aks-ctf/insecure-app:latest
 ```
 
 Once running, it will respond to the following paths:
