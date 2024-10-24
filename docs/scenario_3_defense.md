@@ -98,7 +98,7 @@ The binary drift detection feature alerts you when there's a difference between 
 
 Our container was given a cluster role that was too permissive.
 
-https://github.com/lastcoolnameleft/aks-ctf/blob/main/workshop/manifests/omnibus.yml#L7-L14
+https://github.com/azure/aks-ctf/blob/main/workshop/manifests/omnibus.yml#L7-L14
 
 We got confirmation from the developer that the app needs to be able to see (but not modify) other pods in the namespace.  Let's update that role to be less permissive:
 

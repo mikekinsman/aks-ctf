@@ -161,7 +161,7 @@ kind: Kustomization
 resources:
 - omnibus.yml
 images:
-- name: lastcoolnameleft/insecure-app
+- name: aks-ctf/insecure-app
   newName: ${ACR_NAME}.azurecr.io/insecure-app
 EOF
 
