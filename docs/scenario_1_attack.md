@@ -80,7 +80,7 @@ uname -a
 ```
 
 ```console
-cat /etc/lsb-release
+cat /etc/os-release
 ```
 
 ```console
