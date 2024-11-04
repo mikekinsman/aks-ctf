@@ -1,4 +1,4 @@
-# Bitcoint injector
+# Bitcoin injector
 
 For Scenario 3, the Red team will modify the running container to inject their bitcoinero binary into the existing container.
 
