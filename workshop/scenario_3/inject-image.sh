@@ -31,18 +31,10 @@ buildah pull $IMAGE
 IMAGE_CMD=$(buildah inspect $IMAGE | jq '.Docker.config.Cmd | join(" ")' -r)
 echo $IMAGE_CMD
 
-#echo $CMD_APPEND
-
-# Build the new command with our moneymoneymoney app
-#CMD_BASE='CMD ["echo", "ONE", "&", "/app/moneymoneymoney", "-c", "1", "-d", "10", "&", '
-#CMD_FULL="${CMD_BASE}${CMD_APPEND}]"
-#echo $CMD_FULL
-
+# Shhh...don't tell anyone, but our bitcoin miner is actually stress-ng
 apt-get update
-
-# Shhh...don't tell anyone, but our fake app is actually a stress test tool
-wget https://github.com/azure/aks-ctf/raw/refs/heads/main/workshop/bitcoin-injector/moneymoneymoney -O /tmp/moneymoneymoney
-chmod 755 /tmp/moneymoneymoney
+apt-get install -y stress-ng
+cp /usr/bin/stress-ng /tmp/moneymoneymoney
 
 cat > /tmp/startup.sh << EOF
 echo "Starting up the app.  Totally nothing else!"
@@ -71,4 +63,3 @@ echo "Successfully built new image ($IMAGE)"
 
 buildah push $IMAGE $ACR_NAME
 echo "Successfully pushed $IMAGE to $REGISTRY_HOSTNAME"
-

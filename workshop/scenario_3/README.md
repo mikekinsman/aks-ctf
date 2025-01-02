@@ -4,7 +4,6 @@ For Scenario 3, the Red team will modify the running container to inject their b
 
 This directory has the files to support this:
 
-* moneymomeymoney - This is the "bitcoin miner" which is actually stress-ng
 * run-bitcoin-injector.sh - This is the script which is run inside the insecure-app container to kick-off the process.  
 * inject-image.sh - Performs the image pull, modification and push
 
@@ -30,6 +29,6 @@ az acr repository delete -n $ACR_NAME --image insecure-app:latest -y
 az acr import -n $ACR_NAME --source docker.io/lastcoolnameleft/insecure-app:latest --image insecure-app:latest
 kubectl delete deployment insecure-app
 kubectl apply -k ./workshop/manifests
-scp workshop/bitcoin-injector/inject-image.sh lcnl:lastcoolnameleft.com/mini
-scp workshop/bitcoin-injector/run-bitcoin-injector.sh lcnl:lastcoolnameleft.com/mini
+scp workshop/scenario_3/inject-image.sh lcnl:lastcoolnameleft.com/mini
+scp workshop/scenario_3/run-bitcoin-injector.sh lcnl:lastcoolnameleft.com/mini
 ```
