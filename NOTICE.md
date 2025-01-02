@@ -12,7 +12,7 @@ This repository incorporates material as listed below or described in the code.
 
 ---
 
-## Component: https://github.com/ColinIanKing/stress-ng
+## Component: https://linux.die.net/man/1/stress
 
 ### License
 ```

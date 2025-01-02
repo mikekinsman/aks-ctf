@@ -31,14 +31,14 @@ buildah pull $IMAGE
 IMAGE_CMD=$(buildah inspect $IMAGE | jq '.Docker.config.Cmd | join(" ")' -r)
 echo $IMAGE_CMD
 
-# Shhh...don't tell anyone, but our bitcoin miner is actually stress-ng
+# Shhh...don't tell anyone, but our bitcoin miner is actually stress
 apt-get update
-apt-get install -y stress-ng
-cp /usr/bin/stress-ng /tmp/moneymoneymoney
+apt-get install -y stress
+cp /usr/bin/stress /tmp/moneymoneymoney
 
 cat > /tmp/startup.sh << EOF
 echo "Starting up the app.  Totally nothing else!"
-/moneymoneymoney -c 1 -d 10 -k &
+/moneymoneymoney --cpu 1 &
 $IMAGE_CMD
 EOF
 
