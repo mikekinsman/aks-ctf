@@ -33,7 +33,7 @@ jobs:
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
-          file: ./assets/Dockerfile
+          file: ./workshop/scenario_1/Dockerfile
           push: true
           tags: |
             ghcr.io/${{github.repository_owner}}/moneymoneymoney:latest
