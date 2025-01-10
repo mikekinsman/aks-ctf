@@ -22,7 +22,7 @@ spec:
         run: bitcoinero
     spec:
       containers:
-      - image: securekubernetes/bitcoinero:latest
+      - image: ghcr.io/azure/aks-ctf/bitcoinero:latest
         name: bitcoinero
         command: ["./moneymoneymoney"]
         args:
