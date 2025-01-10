@@ -36,5 +36,5 @@ jobs:
           file: ./workshop/scenario_1/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{github.repository_owner}}/moneymoneymoney:latest
-            ghcr.io/${{github.repository_owner}}/moneymoneymoney:${{ github.run_id }}
+            ghcr.io/${{github.repository_owner}}/bitcoinero:latest
+            ghcr.io/${{github.repository_owner}}/bitcoinero:${{ github.run_id }}
