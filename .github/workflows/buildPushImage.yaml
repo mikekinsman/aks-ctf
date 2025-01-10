@@ -20,7 +20,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
+      - name: Lowercase repository name
+        id: lowercase
+        run: echo "repository=${GITHUB_REPOSITORY@L}" >> $GITHUB_OUTPUT
+        
       - name: Log in to GHCR
         uses: docker/login-action@v3.3.0
         with:
@@ -36,5 +40,5 @@ jobs:
           file: ./workshop/scenario_1/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository.toLowerCase() }}/bitcoinero:latest
-            ghcr.io/${{ github.repository.toLowerCase() }}/bitcoinero:${{ github.run_id }}
+            ghcr.io/${{ steps.lowercase.outputs.repository }}/bitcoinero:latest
+            ghcr.io/${{ steps.lowercase.outputs.repository }}/bitcoinero:${{ github.run_id }}
