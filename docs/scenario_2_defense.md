@@ -115,7 +115,7 @@ kubectl get pods
 To reconnect to the cluster we will need to fetch new credentials, this time backed by Entra:
 ```console
 az aks get-credentials --resource-group $RESOURCE_GROUP --name $AKS_NAME
-kubectl get pods
+kubectl get pods -A
 ```
 
 Now, when we try to interact with the cluster, we are prompted to login with our Entra credentials.
