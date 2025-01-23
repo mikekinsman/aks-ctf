@@ -138,7 +138,7 @@ ls /var/run/secrets/kubernetes.io/serviceaccount
 We have typical Kubernetes-related environment variables defined, and we have anonymous access to some parts of the Kubernetes API. We can see that the Kubernetes version is modern and supported -- but there's still hope if the Kubernetes security configuration is sloppy. Let's check for that next:
 
 ```console
-cd /usr/local/bin; curl -LO https://dl.k8s.io/release/v1.28.10/bin/linux/amd64/kubectl; chmod 555 kubectl
+cd /usr/local/bin; curl -LO https://dl.k8s.io/release/v1.30/bin/linux/amd64/kubectl; chmod 555 kubectl
 ```
 ```console
 kubectl get all

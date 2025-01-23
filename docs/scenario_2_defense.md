@@ -31,7 +31,7 @@ It's back! But how? Let's check the audit logs again:
 
 ```kql
 AKSAuditAdmin
-| where RequestUri startswith "/apis/apps/v1/namespaces/default/deployments" 
+| where RequestUri startswith "/apis/apps/v1/namespaces/dev/deployments" 
     and Verb == "create" 
     and ObjectRef contains "bitcoinero"
 | project User, SourceIps, UserAgent, ObjectRef, TimeGenerated
