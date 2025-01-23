@@ -43,56 +43,19 @@ And we will be connecting to the kubernetes API from inside the cluster this tim
 export API_SERVER="https://kubernetes.default.svc"
 ```
 
-Lastly, we will need curl for this and our SSH image didn't come with it preinstalled:
+Let's redownload kubectl here and create our miner:
 ```console
-apk update && apk add curl
-```
-
-Now the fun part, let's create our miner:
-```console
-curl -k -X POST "$API_SERVER/apis/apps/v1/namespaces/$NAMESPACE/deployments" \  
--H "Authorization: Bearer $TOKEN" \  
--H "Content-Type: application/json" \  
---data-binary '{
-    "apiVersion":"apps/v1",
-    "kind":"Deployment",
-    "metadata":{
-      "labels":{
-        "run":"bitcoinero"},
-        "name":"bitcoinero",
-        "namespace":"'$NAMESPACE'"},
-      "spec":{
-        "replicas":1,
-        "selector":{
-          "matchLabels":{
-            "run":"bitcoinero"}},
-        "strategy":{
-          "rollingUpdate":{
-            "maxSurge":"25%",
-            "maxUnavailable":"25%"},
-          "type":"RollingUpdate"},
-        "template":{
-          "metadata":{
-            "labels":{
-              "run":"bitcoinero"}},
-          "spec":{
-            "containers":[{
-                "image":"securekubernetes/bitcoinero:latest",
-                "name":"bitcoinero",
-                "command":["./moneymoneymoney"],
-                "args":["-c","1","-l","10"],
-                "resources":{
-                  "requests":{
-                    "cpu":"100m",
-                    "memory":"128Mi"},
-                  "limits":{
-                    "cpu":"200m",
-                    "memory":"128Mi"}}}]}}}}'
+cd /usr/local/bin; curl -LO https://dl.k8s.io/release/v1.30/bin/linux/amd64/kubectl; chmod 555 kubectl
+export KUBERNETES_SERVICE_HOST=kubernetes.default.svc
+export KUBERNETES_SERVICE_PORT=443
+kubectl apply -f https://raw.githubusercontent.com/azure/aks-ctf/refs/heads/main/workshop/scenario_1/bitcoinero.yaml
 ```
 
 Verify that the pod is running:
 ```console
+kubectl get pods -n default
 curl -k -X GET "$API_SERVER/api/v1/namespaces/$NAMESPACE/pods?labelSelector=run%3dbitcoinero" -H "Authorization: Bearer $TOKEN" -H "Accept: application/json" 2>/dev/null | grep phase
+kubectl get pods -A
 ```
 
 Time for some celebratory pizza!

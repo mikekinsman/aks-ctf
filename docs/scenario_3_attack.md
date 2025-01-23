@@ -8,7 +8,7 @@ Lets , let's see if there's any credentials accessible.
 
 ```
 # In case you need to re-download kubectl
-cd /usr/local/bin; curl -LO https://dl.k8s.io/release/v1.28.10/bin/linux/amd64/kubectl; chmod 555 kubectl
+cd /usr/local/bin; curl -LO https://dl.k8s.io/release/v1.30/bin/linux/amd64/kubectl; chmod 555 kubectl
 
 # Let's see if there's any secrets left out for us to grab
 kubectl get secrets
