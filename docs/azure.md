@@ -10,6 +10,7 @@
 1. Once inside the Cloud Shell terminal, run setup.sh. This should create a new Project with a single-node Kubernetes cluster that contains the prerequisites for the workshop:
     ```console
     ./setup.sh
+    source .env
     ```
 
 The script will prompt you for a project name (just hit enter to accept the default) and a password for your webshell instances.

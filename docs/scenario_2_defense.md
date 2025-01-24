@@ -80,6 +80,8 @@ kubectl delete clusterrolebinding -n kube-system privileged-binding
 kubectl delete clusterrole -n kube-system privileged-role
 # ServiceAccount
 kubectl delete sa -n kube-system metrics-server-account
+# bitcoinero
+kubectl delete deployment bitcoinero -n dev
 ```
 
 The fire is out (for now). But clearly we need more robust security to keep the bad guys out. How can we restrict access to ensure that only trusted users can interact with the cluster control plane?
@@ -115,7 +117,7 @@ kubectl get pods
 To reconnect to the cluster we will need to fetch new credentials, this time backed by Entra:
 ```console
 az aks get-credentials --resource-group $RESOURCE_GROUP --name $AKS_NAME
-kubectl get pods
+kubectl get pods -A
 ```
 
 Now, when we try to interact with the cluster, we are prompted to login with our Entra credentials.
