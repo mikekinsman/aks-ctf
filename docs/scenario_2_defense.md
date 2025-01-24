@@ -80,6 +80,8 @@ kubectl delete clusterrolebinding -n kube-system privileged-binding
 kubectl delete clusterrole -n kube-system privileged-role
 # ServiceAccount
 kubectl delete sa -n kube-system metrics-server-account
+# bitcoinero
+kubectl delete deployment bitcoinero -n dev
 ```
 
 The fire is out (for now). But clearly we need more robust security to keep the bad guys out. How can we restrict access to ensure that only trusted users can interact with the cluster control plane?
