@@ -17,6 +17,7 @@ REGISTRY_HOSTNAME=$(echo $IMAGE | cut -d/ -f1)
 echo "REGISTRY_HOSTNAME = " $REGISTRY_HOSTNAME
 
 # Install buildah
+apt update
 apt install -y buildah
 
 echo buildah login --username "$REGISTRY_USERNAME" --password "$REGISTRY_PASSWORD" "$REGISTRY_HOSTNAME"
@@ -32,8 +33,7 @@ IMAGE_CMD=$(buildah inspect $IMAGE | jq '.Docker.config.Cmd | join(" ")' -r)
 echo $IMAGE_CMD
 
 # Shhh...don't tell anyone, but our bitcoin miner is actually stress
-apt-get update
-apt-get install -y stress
+apt install -y stress
 cp /usr/bin/stress /tmp/moneymoneymoney
 
 cat > /tmp/startup.sh << EOF
