@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started for BUILD 2025
 
 
 1.  Open a new tab to [Azure Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/classic?tabs=azurecli).  You can [click here](https://shell.azure.com/).  Be sure to select Bash (NOT Powershell)
