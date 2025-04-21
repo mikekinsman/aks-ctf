@@ -45,16 +45,10 @@ generateVars(){
   # Check if the user provided values for the environment variables
   # If not, use the defaults
   export RESOURCE_GROUP="${RESOURCE_GROUP:-ctf-rg}"
-  export LOCATION="${LOCATION:-westus}"
   export AKS_NAME="${AKS_NAME:-ctf-aks}"
   export VNET_NAME="${VNET_NAME:-ctf-vnet}"
   export AKS_SUBNET_NAME="${AKS_NAME:-aks-subnet}"
   export ACR_NAME=acr${RANDOM}
-
-  # Generate an SSH key for the AKS cluster
-  # TODO: We'll remove this once the disableSSH feature is GA in AKS
-  echo "Generating Cluster SSH key..."
-  ssh-keygen -N '' -f ./aks-ssh -t rsa
 
   # Create a .env file with the generated values
   # This can be used to reload the values if the script is run again
@@ -65,10 +59,7 @@ generateVars(){
   K8SUSER_BASE64=$K8SUSER_BASE64
   K8SPASSWORD_BASE64=$K8SPASSWORD_BASE64
   RESOURCE_GROUP=$RESOURCE_GROUP
-  LOCATION=$LOCATION
   AKS_NAME=$AKS_NAME
-  VNET_NAME=$VNET_NAME
-  AKS_SUBNET_NAME=$AKS_SUBNET_NAME
   ACR_NAME=$ACR_NAME 
 EOF
 }
@@ -82,10 +73,7 @@ loadExistingVars(){
   echo "K8SUSER_BASE64: $K8SUSER_BASE64"
   echo "K8SPASSWORD_BASE64: $K8SPASSWORD_BASE64"
   echo "RESOURCE_GROUP: $RESOURCE_GROUP"
-  echo "LOCATION: $LOCATION"
   echo "AKS_NAME: $AKS_NAME"
-  echo "VNET_NAME: $VNET_NAME"
-  echo "AKS_SUBNET_NAME: $AKS_SUBNET_NAME"
   echo "ACR_NAME: $ACR_NAME"
 }
 
