@@ -20,8 +20,6 @@ generateVars(){
   # If not, use the defaults
   export RESOURCE_GROUP="${RESOURCE_GROUP:-ctf-rg}"
   export AKS_NAME="${AKS_NAME:-ctf-aks}"
-  export VNET_NAME="${VNET_NAME:-ctf-vnet}"
-  export AKS_SUBNET_NAME="${AKS_NAME:-aks-subnet}"
   export ACR_NAME="${ACR_NAME:-acr${RANDOM}}"
 
   # Create a .env file with the generated values
