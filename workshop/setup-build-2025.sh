@@ -48,7 +48,7 @@ generateVars(){
   export AKS_NAME="${AKS_NAME:-ctf-aks}"
   export VNET_NAME="${VNET_NAME:-ctf-vnet}"
   export AKS_SUBNET_NAME="${AKS_NAME:-aks-subnet}"
-  export ACR_NAME=acr${RANDOM}
+  export ACR_NAME="${ACR_NAME:-acr${RANDOM}}"
 
   # Create a .env file with the generated values
   # This can be used to reload the values if the script is run again
