@@ -83,7 +83,7 @@ kubectl create secret docker-registry acr-secret \
   --dry-run=client -o yaml | kubectl apply -f -
 
 # build the app image
-az acr build -r $ACR_NAME --image insecure-app ./insecure-app/
+az acr build --no-logs -r $ACR_NAME --image insecure-app ./insecure-app/
 
 cat <<EOF >>./manifests/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
