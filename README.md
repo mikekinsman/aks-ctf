@@ -13,6 +13,8 @@ Visit [https://azure.github.io/aks-ctf/](https://azure.github.io/aks-ctf/)
 
 This workshop was inspired by https://github.com/securekubernetes/securekubernetes/ and the content created by [those authors](https://github.com/securekubernetes/securekubernetes/?tab=readme-ov-file#about-the-authors).
 
+This workshop was presented at Build 2025 in session [LAB347 - Ethical Hacking with AKS: Hands-On Attack and Defense Strategies](https://build.microsoft.com/en-US/sessions/lab346).
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
